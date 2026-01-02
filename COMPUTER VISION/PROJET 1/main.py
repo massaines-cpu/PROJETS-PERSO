@@ -40,10 +40,10 @@ model = Sequential([
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# Entraîner le modèle
+#Entraîner le modèle
 model.fit(train_gen, validation_data=val_gen, epochs=2)
 
-# Tester sur une image de validation
+#Tester sur une image de validation
 img = val_gen[0][0][0]
 pred = model.predict(np.expand_dims(img, axis=0))
 print("Prediction :", pred)
